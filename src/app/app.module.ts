@@ -6,17 +6,39 @@ import { AppComponent } from './app.component';
 import { AddFriendsComponent } from './add-friends/add-friends.component';
 import { ViewFriendsComponent } from './view-friends/view-friends.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchFriendsComponent } from './search-friends/search-friends.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const myRoute:Routes=[
+  {
+    path:"",
+    component:AddFriendsComponent
+  },
+  {
+    path:"view",
+    component:ViewFriendsComponent
+  },
+  {
+    path:"navbar",
+    component:NavbarComponent
+  },
+  {
+    path:"search",
+    component:SearchFriendsComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
     AddFriendsComponent,
     ViewFriendsComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchFriendsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
